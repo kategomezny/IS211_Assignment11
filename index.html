@@ -1,1 +1,37 @@
-ldkd
+<!DOCTYPE html>
+<html lang="en" dir="ltr"
+ <head>
+   <meta charset="utf-8">
+	<title>To Do List using Python, Flask and html</title> 
+	<link rel="stylesheet" href="{{url_for('static', filename='css/template.css')}}">
+ </head>
+ <body>
+
+<h1>To Do List - You have {{ totallist }} task(s) in your list </h1>
+
+<div>
+        <form method="POST" action="http://localhost:5000/submit">
+	{{form.hidden_tag() }}
+	<fieldset>
+		<div> 
+			{{ form.TaskName.label }}
+			{{ form.TaskName }}
+		</div>
+		<div>
+			{{ form.Priority.label }}
+			{{ form.Priority }}
+		</div>
+		<div>
+			{{ form.Email.label }}
+			{{ form.Email }}
+		</div>
+		<div>
+			{{ form.Submit }}
+		</div>
+	</fieldset>
+	</form>
+
+
+</div>
+</body>
+</html>
